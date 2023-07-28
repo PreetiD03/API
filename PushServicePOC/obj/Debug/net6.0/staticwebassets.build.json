@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "uKyL5rAVQL9aVCPJDZBmEu2cTklgdR6OFyUDl08Kyqs=",
+  "Source": "PushServicePOC",
+  "BasePath": "_content/PushServicePOC",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
