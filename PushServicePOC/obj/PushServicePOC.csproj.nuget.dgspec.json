@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\APIProject\\PushServicePOC\\PushServicePOC.csproj": {}
+    "C:\\Users\\rajkumar84\\Rajesh\\Campaign_API\\API\\PushServicePOC\\PushServicePOC.csproj": {}
   },
   "projects": {
-    "C:\\APIProject\\PushServicePOC\\PushServicePOC.csproj": {
+    "C:\\Users\\rajkumar84\\Rajesh\\Campaign_API\\API\\PushServicePOC\\PushServicePOC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\APIProject\\PushServicePOC\\PushServicePOC.csproj",
+        "projectUniqueName": "C:\\Users\\rajkumar84\\Rajesh\\Campaign_API\\API\\PushServicePOC\\PushServicePOC.csproj",
         "projectName": "PushServicePOC",
-        "projectPath": "C:\\APIProject\\PushServicePOC\\PushServicePOC.csproj",
-        "packagesPath": "C:\\Users\\predeep\\.nuget\\packages\\",
-        "outputPath": "C:\\APIProject\\PushServicePOC\\obj\\",
+        "projectPath": "C:\\Users\\rajkumar84\\Rajesh\\Campaign_API\\API\\PushServicePOC\\PushServicePOC.csproj",
+        "packagesPath": "C:\\Users\\rajkumar84\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rajkumar84\\Rajesh\\Campaign_API\\API\\PushServicePOC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\predeep\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rajkumar84\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

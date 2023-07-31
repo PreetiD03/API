@@ -10,13 +10,30 @@ namespace PushServicePOC.Controllers
     public class MetaController : ControllerBase
     {
         private readonly IMetaServices _metaServices;
-       public MetaController(IMetaServices metaServices) { 
+
+        /// <summary>
+        ///      Initializes a new instance of Class
+        /// </summary>
+        /// <param name="metaServices">
+        ///     Meta Service
+        /// </param>
+        public MetaController(IMetaServices metaServices)
+        {
             _metaServices = metaServices;
-             
         }
 
+        /// <summary>
+        ///     Create Meta Campaign 
+        /// </summary>
+        /// <param name="metaCampaignObject">
+        ///    Campaign object to be post on meta server  
+        /// </param>
+        /// <returns>
+        ///     <c>not-null</c>
+        /// </returns>
         [HttpPost("create-meta-campaign")]
-        public ActionResult<HttpResponseMessage> PostMetaCampaign(MetaCampaignModel metaCampaignObject)
+        public ActionResult<HttpResponseMessage> PostMetaCampaign(
+            MetaCampaignModel metaCampaignObject)
         {
             try
             {

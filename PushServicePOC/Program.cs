@@ -9,9 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Resolving services dependency
 builder.Services.AddTransient<IMetaServices, MetaPushServices>();
-
-
 
 var app = builder.Build();
 
