@@ -1,5 +1,7 @@
-﻿using PushServicePOC.Data.Entity;
+﻿using Newtonsoft.Json;
+using PushServicePOC.Data.Entity;
 using PushServicePOC.Interface;
+using System.Net.Http.Headers;
 
 namespace PushServicePOC.Services
 {
@@ -73,5 +75,41 @@ namespace PushServicePOC.Services
             var _response = await _client.SendAsync(_request);
             return _response;
         }
+
+
+        public async Task<List<string>> GetAllMetaCampaign()
+        {
+            var campaignIdsLst = new List<string>();
+
+            using (var requestMessage =new HttpRequestMessage(HttpMethod.Get, baseUrl))
+            {
+                requestMessage.Headers.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _apiAuthSettings.
+                    GetSection("api-key").Value);
+
+                var _response = await _client.SendAsync(requestMessage);
+                var res = _response.Content.ReadAsStringAsync().Result;
+
+                if (res != null)
+                {
+                    var campaignData = JsonConvert.DeserializeObject<dynamic>(res);
+                    campaignData = campaignData?.data;
+
+                    if (campaignData != null)
+                    {
+                        foreach (var i in campaignData)
+                        {
+                            campaignIdsLst.Add(i.id.ToString());
+                        }
+
+                    }
+                }
+            }
+
+            return campaignIdsLst;
+
+        }
     }
 }
+
+       
