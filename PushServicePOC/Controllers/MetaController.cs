@@ -10,6 +10,7 @@ namespace PushServicePOC.Controllers
     public class MetaController : ControllerBase
     {
         private readonly IMetaServices _metaServices;
+        private readonly MetaResponse metaResponse = new MetaResponse();    
 
         /// <summary>
         ///      Initializes a new instance of Class
@@ -44,6 +45,31 @@ namespace PushServicePOC.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+
+            }
+
+        }
+
+        [HttpGet("get-all-campaign")]
+        public ActionResult<MetaResponse> GetAllMetaCampaign()
+        {
+            try
+            {
+                var response = _metaServices.GetAllMetaCampaign();
+                if (response.Result.Count > 0)
+                {
+                    metaResponse.status = true;
+                    metaResponse.data = response.Result;
+                    metaResponse.message = "total campaign:  " + response.Result.Count();
+                }
+                return Ok(metaResponse);
+
+            }
+            catch (Exception ex)
+            {
+                metaResponse.status = false;
+                metaResponse.message = ex.Message;
+                return BadRequest(metaResponse);
 
             }
 
