@@ -1,7 +1,7 @@
 ﻿namespace PushServicePOC.Data.Entity
 {
     /// <summary>
-    ///     Representing Meta Campaign Class model  
+    ///     Representing Meta Campaign Class model
     /// </summary>
     public class MetaCampaignModel
     {
@@ -16,7 +16,7 @@
         public string? Objective { get; set; }
 
         /// <summary>
-        ///     gets or sets status 
+        ///     gets or sets status
         /// </summary>
         public string? Status { get; set; }
 
@@ -26,12 +26,12 @@
         public string? SpecialAdCategories { get; set; }
 
         /// <summary>
-        ///     gets or sets smart promotion type 
+        ///     gets or sets smart promotion type
         /// </summary>
         public string? SmartPromotionType { get; set; }
 
         /// <summary>
-        ///     gets or sets access token 
+        ///     gets or sets access token
         /// </summary>
         public string? AccessToken { get; set; }
     }

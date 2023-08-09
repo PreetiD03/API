@@ -1,5 +1,7 @@
+
+using Google.Ads.GoogleAds;
+using PushServicePOC;
 using PushServicePOC.Interface;
-using PushServicePOC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,18 +10,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.CustomSchemaIds(type => type.ToString());
+});
 //services cors
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
 
-
-
-
 // Resolving services dependency
-builder.Services.AddTransient<IMetaServices, MetaPushServices>();
+builder.Services.AddTransient<IMetaService, MetaPushService>();
+builder.Services.AddTransient<IGoogleCampaignManager,GoogleCampaignServices>();
+
+
+
+
 
 var app = builder.Build();
 
@@ -27,6 +34,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+
     app.UseSwaggerUI();
 }
 
@@ -37,6 +45,5 @@ app.UseCors("corsapp");
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 app.Run();

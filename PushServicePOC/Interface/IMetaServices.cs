@@ -3,9 +3,9 @@
 namespace PushServicePOC.Interface
 {
     /// <summary>
-    ///     Meta Service Manager 
+    ///     Meta Service Manager
     /// </summary>
-    public interface IMetaServices
+    public interface IMetaService
     {
         public Task<HttpResponseMessage> CreateMetaCampaign(MetaCampaignModel metaCampaignObject);
 

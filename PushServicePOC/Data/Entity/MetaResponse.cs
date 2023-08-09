@@ -6,5 +6,4 @@
         public string message { get; set; }
         public List<string> data { get; set; }
     }
-      
 }

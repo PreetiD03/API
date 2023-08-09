@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Google.Ads.GoogleAds": {
+              "target": "Package",
+              "version": "[16.1.0, )"
+            },
+            "Google.Ads.GoogleAds.Extensions": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
